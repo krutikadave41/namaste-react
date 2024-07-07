@@ -1213,4 +1213,4 @@ export const resList = [
           "type": "WEBLINK"
         }
       }
-]
+];
