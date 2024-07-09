@@ -41,3 +41,24 @@
     width:200px;
     height:110px;
 }
+.btn-filter{
+    margin:5px;
+}
+.shimmer-card{
+    margin: 5px;
+    padding: 5px;
+    width: 220px;
+    height:250;
+    background-color: #f0f0f0;
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin: 5px;
+}
+
+.btn-login{
+    padding: 0px 20px;
+}

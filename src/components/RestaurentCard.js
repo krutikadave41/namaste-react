@@ -6,7 +6,7 @@ const styleCard = {
   
   const RestaurentCard = (props) => {
     const resData = props?.resData;
-    const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId} = resData?.info;
+    const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId} = resData.info;
     return (
       <div
         className="res-card"
