@@ -1,7 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
-import { resList } from "../utils/restaurents";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [restaurentList, setRestaurentList] = useState([]);
@@ -19,7 +19,7 @@ const Body = () => {
     };
 
     // conditional rendering
-    return restaurentList.length===0? (<Shimmer></Shimmer>):(
+    return filteredRestaurentList.length===0? (<Shimmer></Shimmer>):(
       <div className="body">
         <div className="filter">
             <input className="search-txt" value={searchText} onChange={(e)=>{
@@ -36,7 +36,7 @@ const Body = () => {
         </div>
         <div className="res-container">
           {filteredRestaurentList.map((resData) => (
-            <RestaurentCard key={resData.info.id} resData={resData} />
+            <Link to={"/restaurants/"+resData.info.id} style={{ textDecoration: 'none',color: 'inherit' }}><RestaurentCard key={resData.info.id} resData={resData} /></Link>
           ))}
         </div>
       </div>
