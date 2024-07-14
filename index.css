@@ -62,3 +62,13 @@
 .btn-login{
     padding: 0px 20px;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.user-image {
+    width:200px;
+    height:110px;
+}
