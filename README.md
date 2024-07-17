@@ -1,6 +1,6 @@
 # Food Delivery App in React
 
-<img src="/images/food-delivery-app" alt="Food delivery app"/>
+<img src="/images/food-delivery-app.png" alt="Food delivery app"/>
 
 
 
