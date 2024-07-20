@@ -1,4 +1,4 @@
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { withDiscountLabel } from "./RestaurentCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -25,6 +25,7 @@ const Body = () => {
     );
   };
 
+  const RestaurantCardDiscounted = withDiscountLabel(RestaurentCard);
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return <h1>Looks like you are offline. Please check your connection.</h1>;
@@ -74,9 +75,14 @@ const Body = () => {
         {filteredRestaurentList.map((resData) => (
           <Link
             to={"/restaurants/" + resData.info.id}
+            key={resData.info.id}
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            <RestaurentCard key={resData.info.id} resData={resData} />
+            {resData?.info?.aggregatedDiscountInfoV3?.header ? (
+              <RestaurantCardDiscounted resData={resData}/>
+            ) : (
+              <RestaurentCard resData={resData} />
+            )}
           </Link>
         ))}
       </div>

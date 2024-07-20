@@ -24,4 +24,14 @@ const styleCard = {
     );
   };
 
+  export const withDiscountLabel = (RestaurentCard) => {
+    return (props) => {
+      return (
+        <div>
+          <label className="absolute m-6 px-4 bg-black text-white font-bold text-lg">{props?.resData?.info?.aggregatedDiscountInfoV3?.header} {props?.resData?.info?.aggregatedDiscountInfoV3?.subHeader}</label>
+          <RestaurentCard {...props} />
+        </div>
+      );
+    };
+  };
   export default RestaurentCard;
