@@ -1,25 +1,26 @@
 import React from "react";
-import User from "./User";
+import UserContext from "../utils/UserContext";
 import UserClass from "./UserClass";
 class About extends React.Component {
   constructor(props) {
-    console.log("parent constructor() called ");
-
     super(props);
   }
 
-  componentDidMount() {
-    console.log("parent componentDidMount() called ");
-  }
+  componentDidMount() {}
   render() {
-    console.log("parent render() called ");
-
     return (
       <>
-        <h1>About Page</h1>
-        <h2>This is a food ordering app using React</h2>
+        <h1 className="font-bold text-xl">About Page</h1>
+        <p className="text-lg shadow-sm">
+          This is a food ordering app using React
+        </p>
         <UserClass name="Krutika" location="Dehradun" />
-        <UserClass name="Riti" location="Dehradun" />
+        <div>
+          <UserContext.Consumer>
+            {( {loggedInUser} ) => {return <h2 className="p-4">LoggedInUser: {loggedInUser}</h2>
+            }}
+          </UserContext.Consumer>
+        </div>
       </>
     );
   }
